@@ -1,0 +1,32 @@
+create table account (
+	id VARCHAR(40) NOT NULL,
+	password VARCHAR(32) NOT NULL,
+	update_time TIMESTAMP,
+	PRIMARY KEY (id)
+) DEFAULT CHARSET=utf8;
+
+create table feed (
+	id INT UNSIGNED AUTO_INCREMENT,
+	user_id VARCHAR(40) NOT NULL,
+	post_time TIMESTAMP,
+	message MEDIUMTEXT,
+	PRIMARY KEY (id)
+
+) DEFAULT CHARSET=utf8;
+
+create table follower_index (
+	target_id VARCHAR(40) NOT NULL,
+	follower_id VARCHAR(40) NOT NULL
+) DEFAULT CHARSET=utf8;
+
+create table my_own_feed_index (
+	user_id VARCHAR(40) NOT NULL,
+	post_time TIMESTAMP NOT NULL,
+	feed_id INT UNSIGNED NOT NULL
+) DEFAULT CHARSET=utf8;
+
+create table my_news_feed_index (
+	user_id VARCHAR(40) NOT NULL,
+	post_time TIMESTAMP NOT NULL,
+	feed_id INT UNSIGNED NOT NULL
+) DEFAULT CHARSET=utf8;
